@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6874735e63a54b6ade70b986871db4d6",
+    "content-hash": "d648ee3b65e8d352e12e15817702e7cd",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -80,45 +80,6 @@
                 "source": "https://github.com/codeigniter4/CodeIgniter4"
             },
             "time": "2024-04-07T02:46:05+00:00"
-        },
-        {
-            "name": "kejawenlab/ci4pager",
-            "version": "1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KejawenLab/CI4Pager.git",
-                "reference": "96e12bc27544fb2b22ba8cbd86a20924e1b33373"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KejawenLab/CI4Pager/zipball/96e12bc27544fb2b22ba8cbd86a20924e1b33373",
-                "reference": "96e12bc27544fb2b22ba8cbd86a20924e1b33373",
-                "shasum": ""
-            },
-            "require": {
-                "codeigniter4/framework": ">=4.0",
-                "ext-pdo": "*",
-                "php": ">=7.2"
-            },
-            "type": "project",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "KejawenLab\\CodeIgniter\\Pagination\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "CodeIgniter 4 Pagination Library",
-            "support": {
-                "issues": "https://github.com/KejawenLab/CI4Pager/issues",
-                "source": "https://github.com/KejawenLab/CI4Pager/tree/1.1"
-            },
-            "time": "2020-10-18T01:21:51+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
