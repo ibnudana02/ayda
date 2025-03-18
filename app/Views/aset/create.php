@@ -46,6 +46,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Lokasi</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="lokasi" id="lokasi" autocomplete="off" placeholder="Lokasi Aset">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Alamat</label>
                                     <div class="col-sm-9">
                                         <textarea name="alamat" id="alamat" class="form-control"></textarea>
@@ -60,34 +66,34 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Harga Jual</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="hargajual" id="hargajual" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="hargajual" id="hargajual" placeholder="0">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Luas Tanah</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="luastanah" id="luastanah" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="luastanah" id="luastanah" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Luas Bangunan</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="luasbangunan" id="luasbangunan" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="luasbangunan" id="luasbangunan" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Kamar Tidur</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="ktidur" id="ktidur" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="ktidur" id="ktidur" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Kamar Mandi</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="kmandi" id="kmandi" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="kmandi" id="kmandi" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Garasi</label>
                                     <div class="col-sm-9">
                                         <select name="garasi" id="garasi" class="form-control select2">
@@ -97,7 +103,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Sumber Air</label>
                                     <div class="col-sm-9">
                                         <select name="sumberair" id="sumberair" class="form-control select2">
@@ -108,10 +114,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Listrik</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" name="listrik" id="listrik" placeholder="0.00">
+                                        <input type="text" class="form-control currency" autocomplete="off" name="listrik" id="listrik" placeholder="0">
                                     </div>
                                 </div>
                             </div>
@@ -182,6 +188,8 @@
         bsCustomFileInput.init();
     });
 
+    $('.rumah').hide();
+
     $(".select2").select2({
         width: '100%',
         allowClear: true
@@ -203,6 +211,17 @@
         var kode = generator_kode(10);
         $('#kdaset').val(kode);
     });
+
+    $("#jenis").on('change', function(e) {
+        var jenis = $("#jenis").val();
+        // console.log(jenis);
+        if (jenis == '10') {
+            $('.rumah').show();
+        } else {
+            $('.rumah').hide();
+        }
+
+    })
 </script>
 <script src="<?= base_url('public/js/custom.js?r=' . time()) ?>"></script>
 <?= $this->endSection() ?>

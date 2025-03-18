@@ -126,3 +126,8 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+#uploads folder
+public/uploads/aset/
+public/uploads/user/
+public/uploads/aplikasi/
+

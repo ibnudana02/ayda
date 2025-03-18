@@ -16,7 +16,7 @@
 <!-- Blog Posts Section -->
 <section id="blog-posts" class="blog-posts section">
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row gy-4">
 
             <?php foreach ($aset as $key => $a) : ?>
@@ -28,19 +28,22 @@
                             </a>
                         </div>
                         <h2 class="title">
-                            <a href="<?= base_url('lelang/detail/') . $a['kdaset'] ?>" class="text-success"><?= fullnominal($a['hargajual']) ?></a>
+                            <p class="text-success"><?= fullnominal($a['hargajual']) ?></p>
+                            <!-- <a href="<?= base_url('lelang/detail/') . $a['kdaset'] ?>" class="text-success"><?= fullnominal($a['hargajual']) ?></a> -->
                         </h2>
                         <div class="d-flex align-items-center">
                             <div class="post-meta">
                                 <p class="post-author"><?= $a['ket_jenis'] . " DI " . $a['lokasi'] ?></p>
                                 <p class="post-date">
-                                    <span class="px-3">LT: <?= $a['luastanah'] ?> M<sup>2</sup></span>
-                                    <span class="px-3">LB: <?= $a['luasbangunan'] ?> M<sup>2</sup></span>
+                                    <span><i class="fas fa-globe-asia"></i> <?= $a['luastanah'] ?> m<sup>2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <?php if ($a['luasbangunan'] > 0) : ?>
+                                        <span><i class="fas fa-home"></i> <?= $a['luasbangunan'] ?> m<sup>2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <?php endif ?>
                                     <?php if ($a['ktidur'] > 0) : ?>
-                                        <span class="px-3">KT: <?= $a['ktidur'] ?> </span>
+                                        <span><i class="fas fa-bed"></i> <?= $a['ktidur'] ?> </span>&nbsp;&nbsp;&nbsp;&nbsp;
                                     <?php endif ?>
                                     <?php if ($a['kmandi'] > 0) : ?>
-                                        <span class="px-3">KM: <?= $a['kmandi'] ?> </span>
+                                        <span><i class="fas fa-bath"></i> <?= $a['kmandi'] ?> </span>&nbsp;&nbsp;&nbsp;&nbsp;
                                     <?php endif ?>
                                 </p>
                             </div>

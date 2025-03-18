@@ -15,8 +15,8 @@ class AsetModel extends Model
         'created_by', 'updated_by', 'created_at', 'updated_at'
     ];
 
-    protected $column_order = [null, 'kdaset', 'jenis', 'sertifikat', 'hargajual', 'alamat', 'a.created_at'];
-    protected $column_search = ['created_by', 'dnorek', 'dnama', 'cnorek', 'cnama', 'nominal', 'ket'];
+    protected $column_order = [null, 'kdaset', 'jenis', 'sertifikat', 'hargajual', 'lokasi', 'alamat', 'a.created_at'];
+    protected $column_search = ['lokasi', 'kdaset', 'sertifikat', 'alamat'];
 
     protected $useAutoIncrement = true;
 
@@ -65,6 +65,7 @@ class AsetModel extends Model
     public function getDatatables($username = NULL)
     {
         $this->getDatatablesQuery();
+        $this->dt->select('a.*, ja.ket_jenis');
         if ($this->request->getVar('length') != -1)
             $this->dt->limit($this->request->getVar('length'), $this->request->getVar('start'));
         $this->dt->join('jenis_aset ja', 'a.jenis=ja.kdjenis');
@@ -96,5 +97,13 @@ class AsetModel extends Model
         $this->dt->where('kdaset', $kdaset);
         $query = $this->dt->get();
         return $query->getRow();
+    }
+
+    public function getRecent($kdaset)
+    {
+        $this->dt->join('jenis_aset ja', 'a.jenis=ja.kdjenis');
+        $this->dt->whereNotIn('kdaset', [$kdaset]);
+        $query = $this->dt->get();
+        return $query->getResult();
     }
 }

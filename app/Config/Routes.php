@@ -32,6 +32,8 @@ $routes->group('admin', function ($routes) {
         $routes->post('list', 'Aset::list', ['filter' => 'auth']);
         $routes->match(['get', 'post'], 'create', 'Aset::create', ['filter' => 'auth']);
         $routes->post('detail', 'Aset::detail', ['filter' => 'auth']);
+        $routes->post('delete', 'Aset::delete', ['filter' => 'auth']);
+        $routes->post('upload', 'Aset::upload', ['filter' => 'auth']);
     });
 
     $routes->group('jenis', function ($routes) {

@@ -1,9 +1,9 @@
 {
     "name": "codeigniter4/appstarter",
-    "description": "CodeIgniter4 starter app",
+    "description": "Aplikasi Pemasaran Aset Pembiayaan Bermasalah - PT BPRS Hasanah",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://codeigniter.com",
+    "homepage": "https://bprshasanah.com",
     "support": {
         "forum": "https://forum.codeigniter.com/",
         "source": "https://github.com/codeigniter4/CodeIgniter4",
@@ -12,8 +12,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
-        "kejawenlab/ci4pager": "^1.1",
-        "tecnickcom/tcpdf": "^6.6"
+        "kejawenlab/ci4pager": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",

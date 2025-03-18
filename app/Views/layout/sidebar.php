@@ -2,9 +2,9 @@
     <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
         <?php
         $uri = new \CodeIgniter\HTTP\URI(current_url());
-        if ($_SERVER['SERVER_NAME'] == 'siap.bprshasanah.com') {
-            $page = $uri->getSegment(1);
-            $item = $uri->getSegment(2);
+        if ($_SERVER['SERVER_NAME'] == 'lelang.bprshasanah.com') {
+            $page = $uri->getSegment(2);
+            $item = $uri->getSegment(3);
         } else {
             $page = $uri->getSegment(3);
             $item = $uri->getSegment(4);

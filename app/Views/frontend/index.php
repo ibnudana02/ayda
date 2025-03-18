@@ -47,7 +47,7 @@
             ?>
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="<?= base_url('/') ?>" class="<?= in_array($page, ['/']) ? "active" : ""  ?>">Aset</a></li>
+                    <li><a href="<?= base_url('/') ?>" class="<?= in_array($page, ['', 'lelang']) ? "active" : ""  ?>">Aset</a></li>
                     <li><a href="<?= base_url('kontak') ?>" class="<?= in_array($page, ['kontak'])  ? "active" : ""  ?>">Kontak</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -75,7 +75,7 @@
             </div>
             <div class="container">
                 <div class="copyright">
-                    <span>Copyright</span> <strong class="px-1 sitename"><?= $app['nama_pt'] ?></strong> <span>All Rights Reserved</span>
+                    <span>Copyright</span> 2025 <strong class="px-1 sitename"><?= $app['nama_pt'] ?></strong> <span>All Rights Reserved</span>
                 </div>
             </div>
         </div>

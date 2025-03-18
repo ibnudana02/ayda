@@ -14,6 +14,7 @@
                                     <th>Jenis Aset</th>
                                     <th>Sertifikat</th>
                                     <th>Harga Jual</th>
+                                    <th>Lokasi</th>
                                     <th>Alamat</th>
                                     <th>Created At</th>
                                     <th>Action</th>
@@ -84,6 +85,12 @@
                                     <label for="inputEmail3" class="col-sm-4 col-form-label">Bukti Kepemilikan</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" name="sertifikat" id="sertifikat" placeholder="No Sertifikat">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-4 col-form-label">Lokasi Aset</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder="Lokasi Aset">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -188,6 +195,8 @@
         </div>
     </div>
 </div>
+<?= $this->include('aset/upload') ?>
+<script src="<?= base_url() ?>public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script type="text/javascript">
     var base_url = "<?= base_url('admin/aset/') ?>";
     var dir_url = "<?= base_url('public/uploads/aset/') ?>";
@@ -214,16 +223,16 @@
                 },
                 {
                     orderable: false,
-                    targets: 5
+                    targets: 6
                 },
                 {
                     orderable: false,
                     className: 'text-center',
-                    targets: 7
+                    targets: 8
                 },
             ],
             "order": [
-                [6, 'desc']
+                [7, 'desc']
             ],
             "language": {
                 'paginate': {
@@ -269,6 +278,7 @@
                                 $('#luastanah').val(res.aset.luastanah);
                                 $('#luasbangunan').val(res.aset.luasbangunan);
                                 $('#hargajual').val(res.aset.hargajual);
+                                $('#lokasi').val(res.aset.lokasi);
                                 $('#sertifikat').val(res.aset.sertifikat);
                                 $('#alamat').html(res.aset.alamat);
                                 $('#deskripsi').html(res.aset.deskripsi);
@@ -363,7 +373,76 @@
                 }
             })
         });
+
+        $('#datatable').on('click', '.btn-hapus', function() {
+            var id = $(this).attr('data');
+            console.log(id);
+            Swal.fire({
+                title: 'Apakah anda yakin?',
+                text: "Proses ini akan menghapus Data!",
+                icon: 'warning',
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                denyButtonColor: '#d33',
+                confirmButtonText: 'Hapus',
+                denyButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: base_url + "delete",
+                        dataType: "JSON",
+                        data: {
+                            id: id,
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            Swal.fire({
+                                title: data.title,
+                                html: data.desc,
+                                icon: data.icon,
+                                showCancelButton: false,
+                            }).then((result) => {
+                                $('#datatable').DataTable().ajax.reload();
+                            });
+                        }
+                    })
+                } else if (result.isDenied) {
+                    Swal.fire('Warning', 'Proses hapus batal', 'warning')
+                }
+            })
+        });
+
+        $(function() {
+            bsCustomFileInput.init();
+        });
+
+        $('#datatable').on('click', '.btn-image', function() {
+            var id = $(this).attr('data');
+            console.log(id);
+            Swal.fire({
+                title: 'Upload Photo Aset?',
+                text: "Proses ini akan mengupload photo aset!",
+                icon: 'warning',
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                denyButtonColor: '#d33',
+                confirmButtonText: 'Upload!',
+                denyButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#u_kdaset').val(id);
+                    $('#uploadPhotos').modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire('Warning', 'Proses hapus batal', 'warning')
+                }
+            })
+        });
     });
 </script>
 <script src="<?= base_url('public/js/custom.js') ?>"></script>
+
 <?= $this->endSection() ?>

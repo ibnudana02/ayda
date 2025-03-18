@@ -28,8 +28,15 @@ class Front extends BaseController
     {
         $detail = $this->m_aset->getKdaset($kdaset);
         if ($detail) {
-            $this->data['title'] = "$detail->ket_jenis - $detail->alamat";
+            $this->data['title'] = "$detail->ket_jenis DI $detail->lokasi";
             $this->data['detail'] = $detail;
+            $this->data['recent'] = $this->m_aset->getRecent($kdaset);
+
+            // echo "<pre>";
+            // print_r($this->data);
+            // echo "</pre>";
+            // die;
+
             echo view('frontend/detail', $this->data);
         }
     }
