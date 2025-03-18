@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use KejawenLab\CodeIgniter\Pagination\Paginator;
-
 class Front extends BaseController
 {
     public function index1()
