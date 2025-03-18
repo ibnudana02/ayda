@@ -14,3 +14,4 @@ jobs:
         server: ftp.bprshasanah.com
         username: lelang@bprshasanah.com
         password: ${{secrets.FTP_PASSWORD}}
+        timeout: 190000
