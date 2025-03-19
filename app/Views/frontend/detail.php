@@ -132,7 +132,7 @@
                         <div class="post-item">
                             <img src="<?= base_url('public/uploads/aset/' . $r->image1) ?>" alt="" class="flex-shrink-0">
                             <div>
-                                <h4><a href="<?= base_url("lelang/detail/$r->kdaset") ?>"><?= "$r->ket_jenis DI $r->lokasi " ?></a></h4>
+                                <h4><a href="<?= base_url("aset/detail/$r->kdaset") ?>"><?= "$r->ket_jenis DI $r->lokasi " ?></a></h4>
                                 <time datetime="2020-01-01"><?= date('M d, Y') ?></time>
                             </div>
                         </div><!-- End recent post item-->
