@@ -129,6 +129,54 @@ class Aset extends BaseController
         }
     }
 
+    public function update()
+    {
+        $this->validation->setRules([
+            'jenis' => 'required',
+            'kdaset' => 'required',
+            'luastanah' => 'required',
+            'luasbangunan' => 'trim',
+            'sertifikat' => 'required',
+            'hargajual' => 'required',
+            'deskripsi' => 'required',
+            'lokasi' => 'required',
+            'alamat' => 'required',
+        ]);
+        if ($this->validation->withRequest($this->request)->run()) {
+            $post = $this->request->getVar();
+            $object = [
+                'jenis' => $post['jenis'],
+                'sertifikat' => strtoupper($post['sertifikat']),
+                'hargajual' => $post['hargajual'],
+                'alamat' => strtoupper($post['alamat']),
+                'lokasi' => strtoupper($post['lokasi']),
+                'deskripsi' => strtoupper($post['deskripsi']),
+                'luastanah' => $post['luastanah'],
+                'updated_at' => date('Y-m-d H:i:s'),
+                'updated_by' => strtoupper($this->session->get('username'))
+            ];
+            if ($post['jenis'] == '10') {
+                $object['ktidur'] = $post['ktidur'];
+                $object['kmandi'] = $post['kmandi'];
+                $object['garasi'] = $post['garasi'];
+                $object['sumberair'] = $post['sumberair'];
+                $object['listrik'] = $post['listrik'];
+                $object['luasbangunan'] = $post['luasbangunan'];
+            }
+            $update = $this->m_aset->set($object)->where('kdaset', $post['kdaset'])->update();
+            if ($update) {
+                return redirect()->to('admin/aset/index')->with('success', 'Update Aset berhasil!');
+            }
+        } else {
+            $errors = array_values($this->validation->getErrors());
+            $error = '';
+            for ($i = 0; $i < count($errors); $i++) {
+                $error .= $errors[$i] . "</br>";
+            }
+            return redirect()->back()->withInput()->with('error', $error);
+        }
+    }
+
     public function delete()
     {
         $id = $this->request->getVar('id');

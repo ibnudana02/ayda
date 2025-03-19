@@ -39,7 +39,6 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?= form_open(base_url('aset/')) ?>
                 <div class="card card-primary card-tabs">
                     <div class="card-header p-0 pt-1">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -54,7 +53,7 @@
                             </li>
                         </ul>
                     </div>
-                    <?= form_open(current_url()) ?>
+                    <?= form_open(base_url('admin/aset/update')) ?>
                     <div class="card-body pb-0">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="data-financing-tab">

@@ -23,13 +23,13 @@
                 <div class="col-lg-4">
                     <article>
                         <div class="post-img">
-                            <a href="<?= base_url('lelang/detail/') . $a['kdaset'] ?>">
+                            <a href="<?= base_url('aset/detail/') . $a['kdaset'] ?>">
                                 <img src="<?= base_url('public/uploads/aset/' . $a['image1']) ?>" alt="" class="img-fluid">
                             </a>
                         </div>
                         <h2 class="title">
                             <p class="text-success"><?= fullnominal($a['hargajual']) ?></p>
-                            <!-- <a href="<?= base_url('lelang/detail/') . $a['kdaset'] ?>" class="text-success"><?= fullnominal($a['hargajual']) ?></a> -->
+                            <!-- <a href="<?= base_url('aset/detail/') . $a['kdaset'] ?>" class="text-success"><?= fullnominal($a['hargajual']) ?></a> -->
                         </h2>
                         <div class="d-flex align-items-center">
                             <div class="post-meta">

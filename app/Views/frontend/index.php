@@ -5,12 +5,17 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= strtoupper($title) ?></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <?php
+    $uri = new \CodeIgniter\HTTP\URI(current_url());
+    if ($_SERVER['SERVER_NAME'] == 'lelang.bprshasanah.com') {
+        $page = $uri->getSegment(1);
+    } else {
+        $page = $uri->getSegment(2);
+    }
+    ?>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>public/uploads/aplikasi/1692529162_ac3c8dce5e0fb8e16516.png" rel="icon">
-    <link href="<?= base_url() ?>public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?= base_url('public/uploads/aplikasi/' . $app['logo']) ?>" rel="icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -30,25 +35,15 @@
 </head>
 
 <body class="blog-page">
-
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container position-relative d-flex align-items-center justify-content-between">
-
             <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto me-xl-0">
+                <img src="<?= base_url('public/uploads/aplikasi/' . $app['logo']) ?>" class="img-fluid" alt="">
                 <h1 class="sitename"><?= $app['nama_pt'] ?></h1>
             </a>
-            <?php
-            $uri = new \CodeIgniter\HTTP\URI(current_url());
-            if ($_SERVER['SERVER_NAME'] == 'siap.bprshasanah.com') {
-                $page = $uri->getSegment(1);
-            } else {
-                $page = $uri->getSegment(2);
-            }
-            ?>
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="<?= base_url('/') ?>" class="<?= in_array($page, ['', 'lelang']) ? "active" : ""  ?>">Aset</a></li>
-                    <li><a href="<?= base_url('kontak') ?>" class="<?= in_array($page, ['kontak'])  ? "active" : ""  ?>">Kontak</a></li>
+                    <li><a href="<?= base_url('/') ?>" class="<?= in_array($page, ['', 'aset']) ? "active" : ""  ?>">Aset</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -57,11 +52,7 @@
     </header>
 
     <main class="main">
-
-
-
         <?= $this->renderSection('content') ?>
-
     </main>
 
     <footer id="footer" class="footer dark-background">

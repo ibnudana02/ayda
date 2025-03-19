@@ -173,7 +173,7 @@
                     <div class="card-footer">
                         <div class="float-right">
                             <button type="submit" class="btn btn-primary"> Simpan</button>
-                            <a href="<?= base_url('jenis/index') ?>" class="btn btn-danger">Kembali</a>
+                            <a href="<?= base_url('admin/aset/index') ?>" class="btn btn-danger">Kembali</a>
                         </div>
                     </div>
                 </div>
