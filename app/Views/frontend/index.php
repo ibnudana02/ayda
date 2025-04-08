@@ -7,7 +7,7 @@
     <title><?= strtoupper($title) ?></title>
     <?php
     $uri = new \CodeIgniter\HTTP\URI(current_url());
-    if ($_SERVER['SERVER_NAME'] == 'lelang.bprshasanah.com') {
+    if ($_SERVER['SERVER_NAME'] == 'lelang.apphasanah.com') {
         $page = $uri->getSegment(1);
     } else {
         $page = $uri->getSegment(2);

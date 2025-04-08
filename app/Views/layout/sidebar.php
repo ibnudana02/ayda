@@ -2,7 +2,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
         <?php
         $uri = new \CodeIgniter\HTTP\URI(current_url());
-        if ($_SERVER['SERVER_NAME'] == 'lelang.bprshasanah.com') {
+        if ($_SERVER['SERVER_NAME'] == 'lelang.apphasanah.com') {
             $page = $uri->getSegment(2);
             $item = $uri->getSegment(3);
         } else {
