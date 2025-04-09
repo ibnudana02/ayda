@@ -5,12 +5,6 @@
     <div class="container position-relative">
         <h1>Aset BPRS Hasanah</h1>
         <p>Temukan Tanah, Rumah, Ruko atau Kendaraan Impian Anda.</p>
-        <nav class="breadcrumbs">
-            <ol>
-                <li><a href="index.html">Aset</a></li>
-                <li class="current">Lelang</li>
-            </ol>
-        </nav>
     </div>
 </div><!-- End Page Title -->
 <!-- Blog Posts Section -->
@@ -29,11 +23,10 @@
                         </div>
                         <h2 class="title">
                             <p class="text-success"><?= fullnominal($a['hargajual']) ?></p>
-                            <!-- <a href="<?= base_url('aset/detail/') . $a['kdaset'] ?>" class="text-success"><?= fullnominal($a['hargajual']) ?></a> -->
                         </h2>
                         <div class="d-flex align-items-center">
                             <div class="post-meta">
-                                <p class="post-author"><?= $a['ket_jenis'] . " DI " . $a['lokasi'] ?></p>
+                                <p class="post-author"><a href="<?= base_url('aset/detail/' . $a['kdaset']) ?>"><?= $a['ket_jenis'] . " DI " . $a['lokasi'] ?></a></p>
                                 <p class="post-date">
                                     <span><i class="fas fa-globe-asia"></i> <?= $a['luastanah'] ?> m<sup>2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
                                     <?php if ($a['luasbangunan'] > 0) : ?>

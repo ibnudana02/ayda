@@ -5,15 +5,6 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= strtoupper($title) ?></title>
-    <?php
-    $uri = new \CodeIgniter\HTTP\URI(current_url());
-    if ($_SERVER['SERVER_NAME'] == 'lelang.apphasanah.com') {
-        $page = $uri->getSegment(1);
-    } else {
-        $page = $uri->getSegment(2);
-    }
-    ?>
-
     <!-- Favicons -->
     <link href="<?= base_url('public/uploads/aplikasi/' . $app['logo']) ?>" rel="icon">
 
@@ -41,13 +32,6 @@
                 <img src="<?= base_url('public/uploads/aplikasi/' . $app['logo']) ?>" class="img-fluid" alt="">
                 <h1 class="sitename"><?= $app['nama_pt'] ?></h1>
             </a>
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="<?= base_url('/') ?>" class="<?= in_array($page, ['', 'aset']) ? "active" : ""  ?>">Aset</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
         </div>
     </header>
 
@@ -60,9 +44,9 @@
             <h3 class="sitename"><?= $app['nama_pt'] ?></h3>
             <p>Temukan Tanah, Rumah, Ruko atau Kendaraan Impian Anda.</p>
             <div class="social-links d-flex justify-content-center">
-                <a href="https://www.facebook.com/bprs.hasanah"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.facebook.com/bprs.hasanah" target="_newtab"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/bprs.hasanah/" target="_newtab"><i class="bi bi-instagram"></i></a>
-                <a href="https://wa.me/6285356739244?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://wa.me/6285356739244?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!" target="_newtab"><i class="bi bi-whatsapp"></i></a>
             </div>
             <div class="container">
                 <div class="copyright">

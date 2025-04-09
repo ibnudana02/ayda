@@ -5,12 +5,6 @@
     <div class="container position-relative">
         <h1>Aset BPRS Hasanah</h1>
         <p>Temukan Tanah, Rumah, Ruko atau Kendaraan Impian Anda.</p>
-        <nav class="breadcrumbs">
-            <ol>
-                <li><a href="<?= base_url() ?>">Aset</a></li>
-                <li class="current">Detail Aset</li>
-            </ol>
-        </nav>
     </div>
 </div><!-- End Page Title -->
 <div class="container">
@@ -24,11 +18,11 @@
                                 <img src="<?= base_url('public/uploads/aset/') . $detail->image1 ?>" alt="aset-lelang" class="img-fluid">
                             </a>
                         </div>
-                        <h2 class="title text-success"><?= nominal($detail->hargajual)  ?></h2>
-                        <h5><?= "$detail->ket_jenis DI $detail->lokasi"  ?></h5>
+                        <h2 class="title"><?= nominal($detail->hargajual)  ?></h2>
+                        <h5 style="text-align: justify;"><?= "$detail->ket_jenis DI $detail->lokasi"  ?></h5>
                         <div class="meta-top">
                             <ul>
-                                <li class="d-flex align-items-center"><i class="fas fa-map-marker-alt"></i> <?= $detail->alamat ?></li>
+                                <li class="d-flex align-items-center" style="text-align: justify;"> <i class="fas fa-map-marker-alt"></i> <?= $detail->alamat ?></li>
                             </ul>
                         </div><!-- End meta top -->
                         <div class="content">
@@ -41,12 +35,12 @@
                                     </tr>
                                     <tr>
                                         <td class="table-success"> <i class="fas fa-globe-asia"></i> &nbsp;Luas Tanah</td>
-                                        <td class="table-secondary"><?= $detail->luastanah ?> M<sup>2</sup></td>
+                                        <td class="table-secondary"><?= $detail->luastanah ?> m<sup>2</sup></td>
                                     </tr>
                                     <?php if ($detail->jenis == '10') : ?>
                                         <tr>
                                             <td class="table-success"><i class="fas fa-home"></i> &nbsp;Luas Bangunan</td>
-                                            <td class="table-secondary"><?= $detail->luasbangunan ?> M<sup>2</sup></td>
+                                            <td class="table-secondary"><?= $detail->luasbangunan ?> m<sup>2</sup></td>
                                         </tr>
                                         <tr>
                                             <td class="table-success"> <i class="fas fa-bed"></i> &nbsp;Kamar Tidur</td>
@@ -73,7 +67,11 @@
                             </div>
 
                             <p class="text-success h5">DESKRIPSI</p>
-                            <p class="text-justify"><?= $detail->deskripsi ?></p>
+                            <div class="col mb-3">
+                                <p style="text-align: justify;"><?= $detail->deskripsi ?></p>
+                                <p class="text-success">*Click the picture to preview</p>
+                            </div>
+                            <p>Bagi Anda yang berminat dapat menghubungi PIC <?= $app['nama_pt'] ?> melalui whatsapp <a href="<?= "https://wa.me/{$app['pic']}?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!" ?> " target="_bprs"><i class="bi bi-whatsapp"></i></a></p>
                         </div><!-- End post content -->
                         <div class="meta-bottom">
                             <i class="bi bi-folder"></i>
@@ -127,13 +125,20 @@
                 </div>
                 <!-- Recent Posts Widget -->
                 <div class="recent-posts-widget widget-item">
-                    <h3 class="widget-title">Recent Posts</h3>
+                    <h3 class="widget-title">Dapatkan detail lokasi</h3>
+                    <canvas id="qr"></canvas>
+                    <p>Scan QRCode untuk mendapatkan rute</p>
+                </div>
+                <!--/Recent Posts Widget -->
+                <!-- Recent Posts Widget -->
+                <div class="recent-posts-widget widget-item">
+                    <h3 class="widget-title">Posts Lainnya</h3>
                     <?php foreach ($recent as $key => $r) : ?>
                         <div class="post-item">
                             <img src="<?= base_url('public/uploads/aset/' . $r->image1) ?>" alt="" class="flex-shrink-0">
                             <div>
                                 <h4><a href="<?= base_url("aset/detail/$r->kdaset") ?>"><?= "$r->ket_jenis DI $r->lokasi " ?></a></h4>
-                                <time datetime="2020-01-01"><?= date('M d, Y') ?></time>
+                                <time datetime="2020-01-01"><?= date('M d, Y', strtotime($r->created_at)) ?></time>
                             </div>
                         </div><!-- End recent post item-->
                     <?php endforeach ?>
@@ -143,5 +148,14 @@
         </div>
     </div>
 </div>
-
+<script src="<?= base_url('public/js/qrious.js') ?>"></script>
+<script>
+    (function() {
+        var qr = new QRious({
+            element: document.getElementById('qr'),
+            size: 150,
+            value: '<?= $detail->shareloc ?>'
+        });
+    })();
+</script>
 <?= $this->endSection() ?>

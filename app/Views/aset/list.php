@@ -99,6 +99,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-4 col-form-label">Share Location</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="shareloc" id="shareloc" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-4 col-form-label">Deskripsi</label>
                                     <div class="col-sm-8">
                                         <textarea name="deskripsi" id="deskripsi" class="form-control"></textarea>
@@ -273,6 +279,7 @@
                                 // $('#id').val(data.id);
                                 $('#kdaset').val(res.aset.kdaset).prop('readonly', true);
                                 $('#jenis').val(res.aset.jenis);
+                                $('#shareloc').html(res.aset.shareloc);
                                 $('#jenis').trigger('change')
                                 $('#luastanah').val(res.aset.luastanah);
                                 $('#luasbangunan').val(res.aset.luasbangunan);

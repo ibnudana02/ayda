@@ -22,7 +22,7 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Aset</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="kdaset" id="kdaset" autocomplete="off" placeholder="Kode Aset">
+                                        <input type="text" class="form-control" name="kdaset" id="kdaset" autocomplete="off" value="<?= set_value('kdaset') ?>" placeholder="Kode Aset">
                                     </div>
                                     <div class="col-sm-3">
                                         <button class="btn btn-primary" id="gen-kdaset" type="button"><i class="fas fa-calculator"></i> &nbsp;Generate Kode</button>
@@ -34,7 +34,7 @@
                                         <select name="jenis" id="jenis" class="form-control select2">
                                             <option value="">Pilih</option>
                                             <?php foreach ($jenis as $key => $j) : ?>
-                                                <option value="<?= $j['kdjenis'] ?>"><?= $j['ket_jenis'] ?></option>
+                                                <option value="<?= $j['kdjenis'] ?>" <?= set_select('jenis', $j['kdjenis']) ?>><?= $j['ket_jenis'] ?></option>
                                             <?php endforeach ?>
                                         </select>
                                     </div>
@@ -42,64 +42,70 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Bukti Kepemilikan</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="sertifikat" id="sertifikat" autocomplete="off" placeholder="No Sertifikat">
+                                        <input type="text" class="form-control" name="sertifikat" id="sertifikat" value="<?= set_value('sertifikat') ?>" autocomplete="off" placeholder="No Sertifikat">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Lokasi</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="lokasi" id="lokasi" autocomplete="off" placeholder="Lokasi Aset">
+                                        <input type="text" class="form-control" name="lokasi" id="lokasi" autocomplete="off" value="<?= set_value('lokasi') ?>" placeholder="Lokasi Aset">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Alamat</label>
                                     <div class="col-sm-9">
-                                        <textarea name="alamat" id="alamat" class="form-control"></textarea>
+                                        <textarea name="alamat" id="alamat" class="form-control"><?= set_value('alamat') ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Share Location</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="shareloc" id="shareloc" class="form-control"><?= set_value('shareloc') ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Deskripsi</label>
                                     <div class="col-sm-9">
-                                        <textarea name="deskripsi" id="deskripsi" class="form-control"></textarea>
+                                        <textarea name="deskripsi" id="deskripsi" class="form-control"><?= set_value('deskripsi') ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Harga Jual</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="hargajual" id="hargajual" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" value="<?= set_value('hargajual') ?>" name="hargajual" id="hargajual" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row tanah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Luas Tanah</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="luastanah" id="luastanah" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" <?= set_value('luastanah') ?> name="luastanah" id="luastanah" placeholder="0">
                                     </div>
                                 </div>
-                                <div class="form-group row rumah">
+                                <div class="form-group row ruko">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Luas Bangunan</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="luasbangunan" id="luasbangunan" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" <?= set_value('luasbangunan') ?> name="luasbangunan" id="luasbangunan" placeholder="0">
                                     </div>
                                 </div>
                                 <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Kamar Tidur</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="ktidur" id="ktidur" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" <?= set_value('ktidur') ?> name="ktidur" id="ktidur" placeholder="0">
                                     </div>
                                 </div>
                                 <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Kamar Mandi</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="kmandi" id="kmandi" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" <?= set_value('kmandi') ?> name="kmandi" id="kmandi" placeholder="0">
                                     </div>
                                 </div>
                                 <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Garasi</label>
                                     <div class="col-sm-9">
                                         <select name="garasi" id="garasi" class="form-control select2">
-                                            <option value="">Pilih</option>
-                                            <option value="1">Ada</option>
-                                            <option value="0">Tidak Ada</option>
+                                            <option value="" <?= set_select('garasi', '', true) ?>>Pilih</option>
+                                            <option value="1" <?= set_select('garasi', '1') ?>>Ada</option>
+                                            <option value="0" <?= set_select('garasi', '0') ?>>Tidak Ada</option>
                                         </select>
                                     </div>
                                 </div>
@@ -107,17 +113,17 @@
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Sumber Air</label>
                                     <div class="col-sm-9">
                                         <select name="sumberair" id="sumberair" class="form-control select2">
-                                            <option value="">Pilih</option>
-                                            <option value="1">Sumur</option>
-                                            <option value="2">Sumur Bor</option>
-                                            <option value="3">PDAM</option>
+                                            <option value="" <?= set_select('sumberair', '', true) ?>>Pilih</option>
+                                            <option value="1" <?= set_select('sumberair', '1') ?>>Sumur</option>
+                                            <option value="2" <?= set_select('sumberair', '2') ?>>Sumur Bor</option>
+                                            <option value="3" <?= set_select('sumberair', '3') ?>>PDAM</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row rumah">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Listrik</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control currency" autocomplete="off" name="listrik" id="listrik" placeholder="0">
+                                        <input type="text" class="form-control currency" autocomplete="off" value="<?= set_value('listrik') ?>" name="listrik" id="listrik" placeholder="0">
                                     </div>
                                 </div>
                             </div>
@@ -189,6 +195,8 @@
     });
 
     $('.rumah').hide();
+    $('.tanah').hide();
+    $('.ruko').hide();
 
     $(".select2").select2({
         width: '100%',
@@ -212,15 +220,46 @@
         $('#kdaset').val(kode);
     });
 
-    $("#jenis").on('change', function(e) {
-        var jenis = $("#jenis").val();
-        // console.log(jenis);
+    var jenis = $("#jenis").val();
+    if (jenis != undefined && jenis > 0) {
         if (jenis == '10') {
             $('.rumah').show();
+            $('.tanah').show();
+            $('.ruko').show();
+        } else if (jenis == '20') {
+            $('.tanah').show();
+            $('.rumah').hide();
+            $('.ruko').hide();
+        } else if (jenis == '30') {
+            $('.ruko').show();
+            $('.tanah').hide();
+            $('.rumah').hide();
         } else {
+            $('.ruko').hide();
+            $('.tanah').hide();
             $('.rumah').hide();
         }
+    }
 
+    $("#jenis").on('change', function(e) {
+        var jenis = $("#jenis").val();
+        if (jenis == '10') {
+            $('.rumah').show();
+            $('.tanah').show();
+            $('.ruko').show();
+        } else if (jenis == '20') {
+            $('.tanah').show();
+            $('.rumah').hide();
+            $('.ruko').hide();
+        } else if (jenis == '30') {
+            $('.ruko').show();
+            $('.tanah').hide();
+            $('.rumah').hide();
+        } else {
+            $('.ruko').hide();
+            $('.tanah').hide();
+            $('.rumah').hide();
+        }
     })
 </script>
 <script src="<?= base_url('public/js/custom.js?r=' . time()) ?>"></script>

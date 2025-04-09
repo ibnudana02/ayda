@@ -74,7 +74,7 @@ abstract class BaseController extends Controller
         $this->m_ref_fas = new RFasilitasModel($this->request);
         $this->m_fasilitas = new FasilitasModel();
         $this->m_image = new ImageModel();
-        $this->data['app'] = $this->m_app->select('id,nama_pt,alamat_pt,nm_aplikasi,fnama_aplikasi,logo,telp_pt,email_pt,background')->first();
+        $this->data['app'] = $this->m_app->select('id,nama_pt,alamat_pt,nm_aplikasi,fnama_aplikasi,logo,telp_pt,email_pt,background,pic')->first();
         // $this->data['user'] = $this->m_user->select('id,name,username,user_role,image')->find($this->session->get('id'));
         $this->data['user'] = $this->m_user->select('id,name,username,user_role,image')->where('username', $this->session->get('username'))->first();
 

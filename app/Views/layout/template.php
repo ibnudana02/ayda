@@ -40,7 +40,7 @@
     <script src="<?= base_url('public/plugins/select2/js/select2.full.js') ?>"></script>
 </head>
 
-<body class="hold-transition sidebar-mini layout-navbar-fixed ">
+<body class="hold-transition sidebar-mini layout-navbar-fixed sidebar-collapse">
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">

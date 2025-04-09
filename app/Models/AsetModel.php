@@ -10,8 +10,9 @@ class AsetModel extends Model
     protected $table      = 'assets';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'kdaset', 'jenis', 'luastanah', 'luasbangunan', 'sertifikat', 'hargajual', 'deskripsi', 'alamat', 'lokasi',
-        'ktidur', 'kmandi', 'garasi', 'listrik', 'sumberair', 'image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10',
+        'kdaset', 'jenis', 'luastanah', 'luasbangunan', 'sertifikat', 'hargajual', 'deskripsi', 'alamat', 'lokasi', 'shareloc',
+        'ktidur', 'kmandi', 'garasi', 'listrik', 'sumberair',
+        'image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10',
         'created_by', 'updated_by', 'created_at', 'updated_at'
     ];
 
@@ -101,6 +102,7 @@ class AsetModel extends Model
 
     public function getRecent($kdaset)
     {
+        $this->dt->select('a.kdaset, a.image1, a.created_at, ja.ket_jenis, a.lokasi');
         $this->dt->join('jenis_aset ja', 'a.jenis=ja.kdjenis');
         $this->dt->whereNotIn('kdaset', [$kdaset]);
         $query = $this->dt->get();
