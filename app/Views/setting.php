@@ -60,6 +60,18 @@
                                         <input type="text" class="form-control" name="telp" value="<?= $app['telp_pt'] ?>" placeholder="Email Perusahaan">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label" for="inputPassword3">Kontak PIC 1</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="pic1" value="<?= $app['pic1'] ?>" placeholder="Kontak PIC 1">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label" for="inputPassword3">Kontak PIC 2</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="pic2" value="<?= $app['pic2'] ?>" placeholder="Kontak PIC 2">
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <?= form_close() ?>
                             </div>

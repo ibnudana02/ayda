@@ -19,6 +19,8 @@ class Setting extends BaseController
             'nm_aplikasi' => 'required',
             'fnama_aplikasi' => 'required',
             'alamat_pt' => 'required',
+            'pic1' => 'trim',
+            'pic2' => 'trim'
         ];
         if ($this->validate($rules)) {
             $fileImage_name = $this->request->getVar('old_image');
@@ -51,6 +53,8 @@ class Setting extends BaseController
                 'logo' => $fileImage_name,
                 'telp_pt' => $this->request->getVar('telp'),
                 'alamat_pt' => $this->request->getVar('alamat_pt'),
+                'pic1' => $this->request->getVar('pic1'),
+                'pic2' => $this->request->getVar('pic2'),
             ];
             $update = $this->m_app->update($id, $data);
             if ($update) {

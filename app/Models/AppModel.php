@@ -11,6 +11,6 @@ class AppModel extends Model
 
     protected $allowedFields = [
         'nama_pt', 'nm_aplikasi', 'fnama_aplikasi',
-        'email_pt', 'telp_pt', 'logo', 'alamat_pt'
+        'email_pt', 'telp_pt', 'logo', 'alamat_pt', 'pic1', 'pic2'
     ];
 }

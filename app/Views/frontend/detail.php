@@ -67,11 +67,11 @@
                             </div>
 
                             <p class="text-success h5">DESKRIPSI</p>
-                            <div class="col mb-3">
-                                <p style="text-align: justify;"><?= $detail->deskripsi ?></p>
+                            <div class="col mb-3" style="text-align: justify;">
+                                <p><?= $detail->deskripsi ?></p>
+                                <p>Bagi Anda yang berminat dapat menghubungi <?= $app['nama_pt'] ?> melalui whatsapp <a href="<?= "https://wa.me/{$app['pic1']}?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!" ?> " target="_bprs"><i class="bi bi-whatsapp"></i> PIC 1</a> atau <a href="<?= "https://wa.me/{$app['pic2']}?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!" ?> " target="_bprs"><i class="bi bi-whatsapp"></i> PIC 2</a></p>
                                 <p class="text-success">*Click the picture to preview</p>
                             </div>
-                            <p>Bagi Anda yang berminat dapat menghubungi PIC <?= $app['nama_pt'] ?> melalui whatsapp <a href="<?= "https://wa.me/{$app['pic']}?text=Hello%20Saya%20tertarik%20dengan%20aset%20ini!" ?> " target="_bprs"><i class="bi bi-whatsapp"></i></a></p>
                         </div><!-- End post content -->
                         <div class="meta-bottom">
                             <i class="bi bi-folder"></i>
