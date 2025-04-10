@@ -173,6 +173,51 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="customFile" class="col-sm-2 col-form-label">Foto Aset 6</label>
+                                    <div class="col-sm-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFile" name="image[]">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="customFile" class="col-sm-2 col-form-label">Foto Aset 7</label>
+                                    <div class="col-sm-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFile" name="image[]">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="customFile" class="col-sm-2 col-form-label">Foto Aset 8</label>
+                                    <div class="col-sm-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFile" name="image[]">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="customFile" class="col-sm-2 col-form-label">Foto Aset 9</label>
+                                    <div class="col-sm-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFile" name="image[]">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="customFile" class="col-sm-2 col-form-label">Foto Aset 10</label>
+                                    <div class="col-sm-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFile" name="image[]">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
