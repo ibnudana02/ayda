@@ -121,6 +121,41 @@
                                 </a>
                             </div><!-- End Portfolio Item -->
                         <?php endif ?>
+                        <?php if ($detail->image6) : ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?= base_url('public/uploads/aset/' . $detail->image6) ?>" class="glightbox">
+                                    <img src="<?= base_url('public/uploads/aset/' . $detail->image6) ?>" class="img-fluid" alt="">
+                                </a>
+                            </div><!-- End Portfolio Item -->
+                        <?php endif ?>
+                        <?php if ($detail->image7) : ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?= base_url('public/uploads/aset/' . $detail->image7) ?>" class="glightbox">
+                                    <img src="<?= base_url('public/uploads/aset/' . $detail->image7) ?>" class="img-fluid" alt="">
+                                </a>
+                            </div><!-- End Portfolio Item -->
+                        <?php endif ?>
+                        <?php if ($detail->image8) : ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?= base_url('public/uploads/aset/' . $detail->image8) ?>" class="glightbox">
+                                    <img src="<?= base_url('public/uploads/aset/' . $detail->image8) ?>" class="img-fluid" alt="">
+                                </a>
+                            </div><!-- End Portfolio Item -->
+                        <?php endif ?>
+                        <?php if ($detail->image9) : ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?= base_url('public/uploads/aset/' . $detail->image9) ?>" class="glightbox">
+                                    <img src="<?= base_url('public/uploads/aset/' . $detail->image9) ?>" class="img-fluid" alt="">
+                                </a>
+                            </div><!-- End Portfolio Item -->
+                        <?php endif ?>
+                        <?php if ($detail->image10) : ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?= base_url('public/uploads/aset/' . $detail->image10) ?>" class="glightbox">
+                                    <img src="<?= base_url('public/uploads/aset/' . $detail->image10) ?>" class="img-fluid" alt="">
+                                </a>
+                            </div><!-- End Portfolio Item -->
+                        <?php endif ?>
                     </div>
                 </div>
                 <!-- Recent Posts Widget -->
