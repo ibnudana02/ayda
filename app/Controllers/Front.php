@@ -15,7 +15,7 @@ class Front extends BaseController
     {
         $this->data['title'] = 'Daftar Aset Bank';
         $this->data['aset'] = $this->m_aset->join('jenis_aset ja', 'assets.jenis=ja.kdjenis')->findAll();
-        $result = $this->m_aset->join('jenis_aset ja', 'assets.jenis=ja.kdjenis')->findAll();
+        $result = $this->m_aset->join('jenis_aset ja', 'assets.jenis=ja.kdjenis')->findAll(5, 0);
         // $page = 1;
         // $paginator = Paginator::createFromArray($result, $page);
         // $this->data['paginator'] = $paginator;        
