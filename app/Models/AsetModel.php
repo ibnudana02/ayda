@@ -10,7 +10,7 @@ class AsetModel extends Model
     protected $table      = 'assets';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'kdaset', 'jenis', 'luastanah', 'luasbangunan', 'sertifikat', 'hargajual', 'deskripsi', 'alamat', 'lokasi', 'shareloc',
+        'kdaset', 'jenis', 'status', 'luastanah', 'luasbangunan', 'sertifikat', 'hargajual', 'deskripsi', 'alamat', 'lokasi', 'shareloc',
         'ktidur', 'kmandi', 'garasi', 'listrik', 'sumberair',
         'image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10',
         'created_by', 'updated_by', 'created_at', 'updated_at'

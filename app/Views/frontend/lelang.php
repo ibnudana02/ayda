@@ -22,6 +22,9 @@
                             </a>
                         </div>
                         <h2 class="title">
+                            <?php if ($a['status'] == '1') : ?>
+                                <p class="text-danger"><strong>Terjual</strong></p>
+                            <?php endif; ?>
                             <p class="text-success"><?= fullnominal($a['hargajual']) ?></p>
                         </h2>
                         <div class="d-flex align-items-center">

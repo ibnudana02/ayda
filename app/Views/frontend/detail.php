@@ -18,7 +18,7 @@
                                 <img src="<?= base_url('public/uploads/aset/') . $detail->image1 ?>" alt="aset-lelang" class="img-fluid">
                             </a>
                         </div>
-                        <h2 class="title"><?= nominal($detail->hargajual)  ?></h2>
+                        <h2 class="title"><?= nominal($detail->hargajual)  ?> <?= ($detail->status == '1') ? '(Terjual)' : ''; ?></h2>
                         <h5 style="text-align: justify;"><?= "$detail->ket_jenis DI $detail->lokasi"  ?></h5>
                         <div class="meta-top">
                             <ul>
