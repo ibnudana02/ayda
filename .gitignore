@@ -131,3 +131,6 @@ public/uploads/aset/
 public/uploads/user/
 public/uploads/aplikasi/
 
+#skip database config
+app/Config/Database.php
+

@@ -30,7 +30,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => 'Hsn12345!@#',
         'database'     => 'ayda',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
