@@ -224,6 +224,7 @@ class Aset extends BaseController
             $post = $this->request->getVar();
             $object = [
                 'jenis' => $post['jenis'],
+                'status' => $post['status'],
                 'sertifikat' => strtoupper($post['sertifikat']),
                 'hargajual' => $post['hargajual'],
                 'alamat' => strtoupper($post['alamat']),
