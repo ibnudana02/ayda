@@ -75,6 +75,16 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-4 col-form-label">Status Aset</label>
+                                    <div class="col-sm-8">
+                                        <select name="status" id="status" class="form-control select2">
+                                            <option value="">Pilih</option>
+                                            <option value="0" <?= set_select('status', '0') ?>>Aktif</option>
+                                            <option value="1" <?= set_select('status', '1') ?>>Terjual</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-4 col-form-label">Harga Jual</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control currency" name="hargajual" id="hargajual" placeholder="0.00">
@@ -279,8 +289,9 @@
                                 // $('#id').val(data.id);
                                 $('#kdaset').val(res.aset.kdaset).prop('readonly', true);
                                 $('#jenis').val(res.aset.jenis);
-                                $('#shareloc').html(res.aset.shareloc);
                                 $('#jenis').trigger('change')
+                                $('#status').val(res.aset.status).trigger('change');
+                                $('#shareloc').html(res.aset.shareloc);
                                 $('#luastanah').val(res.aset.luastanah);
                                 $('#luasbangunan').val(res.aset.luasbangunan);
                                 $('#hargajual').val(res.aset.hargajual);
